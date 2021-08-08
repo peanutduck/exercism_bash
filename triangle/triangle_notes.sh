@@ -20,3 +20,15 @@ elif [[ $1 == scalene ]]; then
     [[ $2 != $3 && $3 != $4 && $4 != $2 ]] && echo true || echo false
 fi
 
+
+
+# Note that == within [[...]] is doing a string comparison, not a 
+# numeric comparison. Use -eq or ((...))
+
+# a=5
+# b=05
+# [[ $a == $b ]]  && echo Y || echo N     # => N
+# [[ $a -eq $b ]] && echo Y || echo N     # => Y
+# ((a == b))      && echo Y || echo N     # => Y
+
+
